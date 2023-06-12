@@ -14,3 +14,5 @@ class Calculator(tk.Tk):
         display = Display(self)
         display.pack()
 
+        display.typing('Probando')
+
