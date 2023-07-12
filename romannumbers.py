@@ -63,6 +63,8 @@ def logica_aplastante(digito, clau):
 def entero_a_romano(n_int):
     if n_int > 3999:
         raise RomanNumberError('RomanNumber must be less of 4000')
+    elif n_int < 0:
+        raise RomanNumberError('RommanNumber must be cero or positive')
     
     digitos = listar_numero(n_int)
 
