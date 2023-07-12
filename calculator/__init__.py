@@ -42,7 +42,14 @@ class Calculator(tk.Tk):
             self.value = ''
             self.op1 = self.op2 = self.operation = None
         elif tecla in operaciones:
-            self.op1 = RomanNumber(self.value)
+            if self.operation:
+                self.op2 = RomanNumber(self.value)
+                resultado = operaciones[self.operation](self.op1, self.op2)
+                self.op1 = resultado
+                self.op2 = None
+                self.value = resultado.simbolo
+            else:
+                self.op1 = RomanNumber(self.value)
             self.operation = tecla
         elif tecla == '=':
             self.op2 = RomanNumber(self.value)
